@@ -36,6 +36,7 @@
 		088F0C061E69D2A60078C62D /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0C041E69D2A60078C62D /* ViewControllerFactory.swift */; };
 		08FCBAB721874A7100242F82 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB621874A7100242F82 /* ScoreTest.swift */; };
 		08FCBABA21874ACC00242F82 /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB921874ACC00242F82 /* BasicScore.swift */; };
+		389702A8257086DA00A94C08 /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389702A7257086DA00A94C08 /* SingleAnswerQuestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FCBAB621874A7100242F82 /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		08FCBAB921874ACC00242F82 /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
+		389702A7257086DA00A94C08 /* SingleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 		088F0BE21E69D2350078C62D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				389702A6257086AF00A94C08 /* SwiftUI */,
 				389702A52570866B00A94C08 /* UIKit */,
 			);
 			path = UI;
@@ -362,6 +365,14 @@
 				088F0BE81E69D2350078C62D /* Result */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		389702A6257086AF00A94C08 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				389702A7257086DA00A94C08 /* SingleAnswerQuestion.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,6 +491,7 @@
 				0830FF491E687182003E2F2B /* iOSViewControllerFactory.swift in Sources */,
 				088F0C001E69D27D0078C62D /* PresentableAnswer.swift in Sources */,
 				088687361E64729700A19B60 /* AppDelegate.swift in Sources */,
+				389702A8257086DA00A94C08 /* SingleAnswerQuestion.swift in Sources */,
 				088F0BFF1E69D27D0078C62D /* QuestionPresenter.swift in Sources */,
 				088F0BF01E69D2350078C62D /* UITableViewExtensions.swift in Sources */,
 				088F0BF11E69D2350078C62D /* QuestionViewController.swift in Sources */,
