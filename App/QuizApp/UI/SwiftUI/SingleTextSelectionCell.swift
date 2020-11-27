@@ -9,7 +9,7 @@ struct SingleTextSelectionCell: View {
     let selection: () -> Void
 
     var body: some View {
-        Button(action: {}) {
+        Button(action: selection) {
             HStack {
                 Circle()
                     .stroke(Color.secondary, lineWidth: 2.5)
