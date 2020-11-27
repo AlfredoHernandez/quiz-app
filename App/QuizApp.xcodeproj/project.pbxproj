@@ -36,6 +36,7 @@
 		088F0C061E69D2A60078C62D /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F0C041E69D2A60078C62D /* ViewControllerFactory.swift */; };
 		08FCBAB721874A7100242F82 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB621874A7100242F82 /* ScoreTest.swift */; };
 		08FCBABA21874ACC00242F82 /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FCBAB921874ACC00242F82 /* BasicScore.swift */; };
+		38226FBF2570909B00470247 /* QuestionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38226FBE2570909B00470247 /* QuestionHeader.swift */; };
 		389702A8257086DA00A94C08 /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389702A7257086DA00A94C08 /* SingleAnswerQuestion.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		08CB6D9F1E672B8B003D96A9 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08FCBAB621874A7100242F82 /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		08FCBAB921874ACC00242F82 /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
+		38226FBE2570909B00470247 /* QuestionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeader.swift; sourceTree = "<group>"; };
 		389702A7257086DA00A94C08 /* SingleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -371,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				389702A7257086DA00A94C08 /* SingleAnswerQuestion.swift */,
+				38226FBE2570909B00470247 /* QuestionHeader.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				088F0C061E69D2A60078C62D /* ViewControllerFactory.swift in Sources */,
 				088F0BF71E69D2350078C62D /* ResultsViewController.swift in Sources */,
 				088F0C051E69D2A60078C62D /* NavigationControllerRouter.swift in Sources */,
+				38226FBF2570909B00470247 /* QuestionHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
