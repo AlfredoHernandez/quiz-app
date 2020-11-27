@@ -3,9 +3,10 @@
 //
 
 import QuizEngine
+import SwiftUI
 import UIKit
 
-final class iOSViewControllerFactory: ViewControllerFactory {
+final class iOSSwiftUIViewControllerFactory: ViewControllerFactory {
     typealias Answers = [(question: Question<String>, answer: [String])]
 
     private let options: [Question<String>: [String]]
@@ -35,13 +36,13 @@ final class iOSViewControllerFactory: ViewControllerFactory {
     ) -> UIViewController {
         switch question {
         case let .singleAnswer(value):
-            return questionViewController(
-                for: question,
-                value: value,
+            let presenter = QuestionPresenter(questions: questions, question: question)
+            return UIHostingController(rootView: SingleAnswerQuestion(
+                title: presenter.title,
+                question: value,
                 options: options,
-                allowsMultipleSelection: false,
-                answerCallback: answerCallback
-            )
+                selection: { answerCallback([$0]) }
+            ))
 
         case let .multipleAnswer(value):
             return questionViewController(
