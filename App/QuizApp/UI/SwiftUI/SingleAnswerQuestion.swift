@@ -14,17 +14,7 @@ struct SingleAnswerQuestion: View {
         VStack(alignment: .leading, spacing: 0.0) {
             QuestionHeader(title: title, question: question)
             ForEach(options, id: \.self) { option in
-                Button(action: {}) {
-                    HStack {
-                        Circle()
-                            .stroke(Color.secondary, lineWidth: 2.5)
-                            .frame(width: 40, height: 40)
-                        Text(option)
-                            .font(.title)
-                            .foregroundColor(.secondary)
-                        Spacer()
-                    }.padding()
-                }
+                SingleTextSelectionCell(option: option, selection: {})
             }
             Spacer()
         }
