@@ -130,9 +130,7 @@
 		0859016D1E69D30C0010165E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0859016E1E69D30C0010165E /* Helpers */,
-				085901701E69D30C0010165E /* Question */,
-				085901721E69D30C0010165E /* Result */,
+				382458172577462200D0CEF7 /* UIKit */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -365,6 +363,16 @@
 				08FCBAB921874ACC00242F82 /* BasicScore.swift */,
 			);
 			path = Scoring;
+			sourceTree = "<group>";
+		};
+		382458172577462200D0CEF7 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				0859016E1E69D30C0010165E /* Helpers */,
+				085901701E69D30C0010165E /* Question */,
+				085901721E69D30C0010165E /* Result */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		389702A52570866B00A94C08 /* UIKit */ = {
