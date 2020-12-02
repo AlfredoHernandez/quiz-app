@@ -41,6 +41,8 @@
 		38226FC72570968800470247 /* iOSSwiftUIViewControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38226FC62570968800470247 /* iOSSwiftUIViewControllerFactoryTests.swift */; };
 		3824581D2577467900D0CEF7 /* MultipleSelectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824581C2577467900D0CEF7 /* MultipleSelectionStoreTests.swift */; };
 		3824582125775E7E00D0CEF7 /* MultipleSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824582025775E7E00D0CEF7 /* MultipleSelectionStore.swift */; };
+		382458242577606D00D0CEF7 /* MultipleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382458232577606D00D0CEF7 /* MultipleAnswerQuestion.swift */; };
+		382458282577610A00D0CEF7 /* MultipleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382458272577610A00D0CEF7 /* MultipleTextSelectionCell.swift */; };
 		38866504257097750064B675 /* iOSSwiftUIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38866503257097750064B675 /* iOSSwiftUIViewControllerFactory.swift */; };
 		389702A8257086DA00A94C08 /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389702A7257086DA00A94C08 /* SingleAnswerQuestion.swift */; };
 /* End PBXBuildFile section */
@@ -108,6 +110,8 @@
 		38226FC62570968800470247 /* iOSSwiftUIViewControllerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactoryTests.swift; sourceTree = "<group>"; };
 		3824581C2577467900D0CEF7 /* MultipleSelectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStoreTests.swift; sourceTree = "<group>"; };
 		3824582025775E7E00D0CEF7 /* MultipleSelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStore.swift; sourceTree = "<group>"; };
+		382458232577606D00D0CEF7 /* MultipleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAnswerQuestion.swift; sourceTree = "<group>"; };
+		382458272577610A00D0CEF7 /* MultipleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTextSelectionCell.swift; sourceTree = "<group>"; };
 		38866503257097750064B675 /* iOSSwiftUIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactory.swift; sourceTree = "<group>"; };
 		389702A7257086DA00A94C08 /* SingleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -402,8 +406,10 @@
 			isa = PBXGroup;
 			children = (
 				389702A7257086DA00A94C08 /* SingleAnswerQuestion.swift */,
+				382458232577606D00D0CEF7 /* MultipleAnswerQuestion.swift */,
 				38226FBE2570909B00470247 /* QuestionHeader.swift */,
 				38226FC1257091B900470247 /* SingleTextSelectionCell.swift */,
+				382458272577610A00D0CEF7 /* MultipleTextSelectionCell.swift */,
 				3824582025775E7E00D0CEF7 /* MultipleSelectionStore.swift */,
 			);
 			path = SwiftUI;
@@ -526,6 +532,7 @@
 				0830FF491E687182003E2F2B /* iOSUIKitViewControllerFactory.swift in Sources */,
 				38866504257097750064B675 /* iOSSwiftUIViewControllerFactory.swift in Sources */,
 				38226FC2257091B900470247 /* SingleTextSelectionCell.swift in Sources */,
+				382458242577606D00D0CEF7 /* MultipleAnswerQuestion.swift in Sources */,
 				088F0C001E69D27D0078C62D /* PresentableAnswer.swift in Sources */,
 				088687361E64729700A19B60 /* AppDelegate.swift in Sources */,
 				389702A8257086DA00A94C08 /* SingleAnswerQuestion.swift in Sources */,
@@ -534,6 +541,7 @@
 				088F0BF11E69D2350078C62D /* QuestionViewController.swift in Sources */,
 				088F0C061E69D2A60078C62D /* ViewControllerFactory.swift in Sources */,
 				088F0BF71E69D2350078C62D /* ResultsViewController.swift in Sources */,
+				382458282577610A00D0CEF7 /* MultipleTextSelectionCell.swift in Sources */,
 				088F0C051E69D2A60078C62D /* NavigationControllerRouter.swift in Sources */,
 				38226FBF2570909B00470247 /* QuestionHeader.swift in Sources */,
 			);
