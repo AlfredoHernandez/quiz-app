@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let correctAnswers = [(question1, [option2]), (question2, [option4, option6])]
 
         let navigationController = UINavigationController()
-        let factory = iOSSwiftUIViewControllerFactory(options: options, correctAnswers: correctAnswers)
+        let factory = iOSSwiftUIViewControllerFactory(options: options, correctAnswers: correctAnswers, playAgain: {})
         let router = NavigationControllerRouter(navigationController, factory: factory)
 
         window = UIWindow(frame: UIScreen.main.bounds)

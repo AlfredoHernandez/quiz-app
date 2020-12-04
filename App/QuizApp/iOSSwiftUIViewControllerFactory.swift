@@ -11,14 +11,16 @@ final class iOSSwiftUIViewControllerFactory: ViewControllerFactory {
 
     private let options: [Question<String>: [String]]
     private let correctAnswers: Answers
+    private let playAgain: () -> Void
 
     private var questions: [Question<String>] {
         correctAnswers.map(\.question)
     }
 
-    init(options: [Question<String>: [String]], correctAnswers: Answers) {
+    init(options: [Question<String>: [String]], correctAnswers: Answers, playAgain: @escaping () -> Void) {
         self.options = options
         self.correctAnswers = correctAnswers
+        self.playAgain = playAgain
     }
 
     func questionViewController(for question: Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController {
@@ -81,7 +83,7 @@ final class iOSSwiftUIViewControllerFactory: ViewControllerFactory {
             title: presenter.title,
             summary: presenter.summary,
             answers: presenter.presentableAnswers,
-            playAgain: {}
+            playAgain: playAgain
         ))
     }
 }
