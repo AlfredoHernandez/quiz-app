@@ -60,22 +60,33 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
         XCTAssertEqual(view.store.options.map(\.text), options[multipleAnswerQuestion])
     }
 
-    func test_resultsViewController_createsControllerWithTitle() {
-        let (controller, presenter) = makeResults()
+    func test_resultsViewController_createsControllerWithTitle() throws {
+        let (view, presenter) = try XCTUnwrap(makeResults())
 
-        XCTAssertEqual(controller.title, presenter.title)
+        XCTAssertEqual(view.title, presenter.title)
     }
 
-    func test_resultsViewController_createsControllerWithSummary() {
-        let (controller, presenter) = makeResults()
+    func test_resultsViewController_createsControllerWithSummary() throws {
+        let (view, presenter) = try XCTUnwrap(makeResults())
 
-        XCTAssertEqual(controller.summary, presenter.summary)
+        XCTAssertEqual(view.summary, presenter.summary)
     }
 
-    func test_resultsViewController_createsControllerWithPresentableAnswers() {
-        let (controller, presenter) = makeResults()
+    func test_resultsViewController_createsControllerWithPresentableAnswers() throws {
+        let (view, presenter) = try XCTUnwrap(makeResults())
 
-        XCTAssertEqual(controller.answers.count, presenter.presentableAnswers.count)
+        XCTAssertEqual(view.answers, presenter.presentableAnswers)
+    }
+
+    func test_resultsViewController_createsControllerWithPlayAgainAction() throws {
+        var playAgainCallCount = 0
+        let (view, _) = try XCTUnwrap(makeResults(playAgain: { playAgainCallCount += 1 }))
+
+        XCTAssertEqual(playAgainCallCount, 0)
+
+        view.playAgain()
+
+        XCTAssertEqual(playAgainCallCount, 1)
     }
 
     // MARK: Helpers
@@ -96,8 +107,8 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
         [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A4", "A5"])]
     }
 
-    private func makeSUT() -> iOSSwiftUIViewControllerFactory {
-        iOSSwiftUIViewControllerFactory(options: options, correctAnswers: correctAnswers)
+    private func makeSUT(playAgain: @escaping () -> Void = {}) -> iOSSwiftUIViewControllerFactory {
+        iOSSwiftUIViewControllerFactory(options: options, correctAnswers: correctAnswers, playAgain: playAgain)
     }
 
     private func makeSingleAnswerQuestion(answerCallback: @escaping ([String]) -> Void = { _ in }) -> SingleAnswerQuestion? {
@@ -117,14 +128,16 @@ class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
         return controller?.rootView
     }
 
-    private func makeResults() -> (controller: ResultsViewController, presenter: ResultsPresenter) {
-        let sut = makeSUT()
-        let controller = sut.resultsViewController(for: correctAnswers) as! ResultsViewController
+    private func makeResults(playAgain: @escaping () -> Void = {}) -> (view: ResultView, presenter: ResultsPresenter)? {
+        let sut = makeSUT(playAgain: playAgain)
+        let controller = sut.resultsViewController(
+            for: correctAnswers
+        ) as? UIHostingController<ResultView>
         let presenter = ResultsPresenter(
             userAnswers: correctAnswers,
             correctAnswers: correctAnswers,
             scorer: BasicScore.score
         )
-        return (controller, presenter)
+        return controller.map { ($0.rootView, presenter) }
     }
 }

@@ -11,14 +11,16 @@ final class iOSSwiftUIViewControllerFactory: ViewControllerFactory {
 
     private let options: [Question<String>: [String]]
     private let correctAnswers: Answers
+    private let playAgain: () -> Void
 
     private var questions: [Question<String>] {
         correctAnswers.map(\.question)
     }
 
-    init(options: [Question<String>: [String]], correctAnswers: Answers) {
+    init(options: [Question<String>: [String]], correctAnswers: Answers, playAgain: @escaping () -> Void) {
         self.options = options
         self.correctAnswers = correctAnswers
+        self.playAgain = playAgain
     }
 
     func questionViewController(for question: Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController {
@@ -53,32 +55,17 @@ final class iOSSwiftUIViewControllerFactory: ViewControllerFactory {
         }
     }
 
-    private func questionViewController(
-        for question: Question<String>,
-        value: String,
-        options: [String],
-        allowsMultipleSelection: Bool,
-        answerCallback: @escaping ([String]) -> Void
-    ) -> QuestionViewController {
-        let presenter = QuestionPresenter(questions: questions, question: question)
-        let controller = QuestionViewController(
-            question: value,
-            options: options,
-            allowsMultipleSelection: allowsMultipleSelection,
-            selection: answerCallback
-        )
-        controller.title = presenter.title
-        return controller
-    }
-
     func resultsViewController(for userAnswers: Answers) -> UIViewController {
         let presenter = ResultsPresenter(
             userAnswers: userAnswers,
             correctAnswers: correctAnswers,
             scorer: BasicScore.score
         )
-        let controller = ResultsViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
-        controller.title = presenter.title
-        return controller
+        return UIHostingController(rootView: ResultView(
+            title: presenter.title,
+            summary: presenter.summary,
+            answers: presenter.presentableAnswers,
+            playAgain: playAgain
+        ))
     }
 }
