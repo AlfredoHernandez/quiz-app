@@ -405,14 +405,22 @@
 		389702A6257086AF00A94C08 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				389702A7257086DA00A94C08 /* SingleAnswerQuestion.swift */,
-				382458232577606D00D0CEF7 /* MultipleAnswerQuestion.swift */,
+				389B7C572579C3750053EE1B /* Question */,
 				38226FBE2570909B00470247 /* HeaderView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		389B7C572579C3750053EE1B /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				389702A7257086DA00A94C08 /* SingleAnswerQuestion.swift */,
 				38226FC1257091B900470247 /* SingleTextSelectionCell.swift */,
+				382458232577606D00D0CEF7 /* MultipleAnswerQuestion.swift */,
 				382458272577610A00D0CEF7 /* MultipleTextSelectionCell.swift */,
 				3824582025775E7E00D0CEF7 /* MultipleSelectionStore.swift */,
 			);
-			path = SwiftUI;
+			path = Question;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
