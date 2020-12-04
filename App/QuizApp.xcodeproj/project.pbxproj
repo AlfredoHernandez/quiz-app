@@ -409,7 +409,6 @@
 			children = (
 				389B7C592579C3DB0053EE1B /* Helpers */,
 				389B7C572579C3750053EE1B /* Question */,
-				38226FBE2570909B00470247 /* HeaderView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -430,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				389B7C5A2579C3E50053EE1B /* RoundedButton.swift */,
+				38226FBE2570909B00470247 /* HeaderView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
